@@ -1,0 +1,13 @@
+{
+  "database": {
+    "name": "chat-server",
+    "server": {
+      "url": "localhost"
+    }
+  },
+  "restNamespace" : "/api/v1",
+  "webTokenSecret": "toBeReadFromEncryptedChefDataBag",
+  "tlsKey": "RSA-keys/server.key",
+  "tlsCert": "RSA-keys/server.crt",
+  "serverPort": "3000"
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+  <!-- <script src="./socket.io.js"></script> -->
+
+  <script>
+    var token;
+    sendRequest('POST', 'https://localhost:3000/login', {
+      email: 'bar3@baz.com',
+      password: 'Bar123$CdDAo7662bgbgasdas8'
+    }, function callback(res) {
+    // sendRequest('POST', 'https://localhost:3000/user/', {
+    //   email: 'bar4@baz.com',
+    //   password: 'Bar123$CdDAo7662bgbgasdas8',
+    //   firstname: 'bar',
+    //   lastname: 'baz'
+    // }, function callback(res) {
+      token = JSON.parse(res).token;
+      console.log('token = ', token);
+
+      var client = io('https://localhost:3000/', {
+        'query': 'token=' + token
+      });
+
+      client.on('connect', function(socket) {
+        console.log('connected to server.');
+        client.emit('otherevent', { my: 'data' });
+        client.on('news', function (data) {
+          console.log(data);
+        });
+      });
+    });
+
+    function sendRequest(method, url, body, callback) {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open(method,url,true);
+      if (method.toLowerCase() !== 'post')
+        xmlhttp.send();
+      else if (!body)
+        return;
+      else {
+        console.log('setting the header and sending the request');
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify(body));
+      }
+      xmlhttp.onreadystatechange = function(res) {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+          callback(xmlhttp.responseText);
+      };
+    }
+  </script>
+</body>
+</html>
