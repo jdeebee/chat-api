@@ -9,19 +9,13 @@
 
   <script>
     var token;
-    sendRequest('POST', 'https://localhost:3000/login', {
+    var user = {
       email: 'bar3@baz.com',
       password: 'Bar123$CdDAo7662bgbgasdas8'
-    }, function callback(res) {
-    // sendRequest('POST', 'https://localhost:3000/user/', {
-    //   email: 'bar4@baz.com',
-    //   password: 'Bar123$CdDAo7662bgbgasdas8',
-    //   firstname: 'bar',
-    //   lastname: 'baz'
-    // }, function callback(res) {
-      token = JSON.parse(res).token;
-      console.log('token = ', token);
+    };
 
+    login(user, function callback(token) {
+      console.log('token = ', token);
       var client = io('https://localhost:3000/', {
         'query': 'token=' + token
       });
@@ -52,6 +46,27 @@
           callback(xmlhttp.responseText);
       };
     }
+
+    function createUserAccount(user, callback) {
+      sendRequest('POST', 'https://localhost:3000/user/', {
+        email: user.email,
+        password: user.password,
+        firstname: user.firstname,
+        lastname: user.lastname
+      }, function cb(res) {
+        callback(JSON.parse(res).token);
+      });
+    }
+
+    function login(user, callback) {
+      sendRequest('POST', 'https://localhost:3000/login', {
+        email: user.email,
+        password: user.password
+      }, function cb(res) {
+        callback(JSON.parse(res).token);
+      });
+    }
+
   </script>
 </body>
 </html>
