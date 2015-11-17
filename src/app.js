@@ -24,25 +24,16 @@ function startServer(port, callback) {
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-
   app.use(express.static(__dirname + '/../public'));
-  // add this prefix to all routes
-  // app.use(namespace, router);
 
-  // restEndpoints.configure(router, logger);
   restEndpoints.configure(app, logger);
-
   var secureServer = https.createServer(httpsOptions, app);
-  // var secureServer = http.createServer(app);
-
   SocketServer.start(secureServer, config);
-
   secureServer.listen(port, callback);
 }
 
 startServer(port, function callback() {
   // always return from the callback. see the comment in test/rest/api.spec.js (the before hook)
-  // return logger.info('Server started! Listening on port ' + port + ' on the path: ' + namespace);
   return logger.info('Server started! Listening on port ' + port);
 });
 

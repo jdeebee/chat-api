@@ -1,0 +1,21 @@
+{
+  "name": "chat-front",
+  "description": "A simple Angular.js frontend for my chat api",
+  "main": "src/app.js",
+  "authors": [
+    "Javad Sadeqzadeh"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sadeqzadeh/chat-api",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15"
+  }
+}

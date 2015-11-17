@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatjs">
+<head>
+  <meta charset="utf-8">
+  <title>Chat.js</title>
+  <!-- at:less >> css/site.css -->
+  <link rel="stylesheet" href="/develop/frontend/src/components/login/login.css">
+  <!-- at:end -->
+  <!-- set the base url for anular's location service to enable HTML5 History API -
+  to remove the hash sign (which angular puts to URL automatically) -->
+  <!-- https://docs.angularjs.org/error/$location/nobase -->
+  <base href="/">
+</head>
+<body>
+  <div ui-view="singleView"></div>
+
+  <!-- at:js >> js/lib.js -->
+  <script src="/develop/frontend/bower_components/angular/angular.min.js"></script>
+  <script src="/develop/frontend/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- at:end -->
+
+  <!-- at:js >> js/app.js -->
+  <script src="/develop/frontend/src/app.js"></script>
+  <script src="/develop/frontend/src/components/login/LoginCtrl.js"></script>
+  <!-- at:end -->
+</body>
+</html>

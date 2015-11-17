@@ -9,8 +9,13 @@ var model         = require('./model/model');
 var User          = model.User;
 var MessageModel  = model.Message;
 var jwtSecret     = config.webTokenSecret;
+var path          = require('path');
 
 function configure(app, logger) {
+  app.get('/', function (req, res) {
+    res.sendFile(path.resolve(__dirname + '/../public/develop/frontend/index.html'));
+  });
+
   app.post('/login', function (req, res) {
     User.getAuthenticated(req.body.email, req.body.password, function(err, user, reason) {
       if (err)
