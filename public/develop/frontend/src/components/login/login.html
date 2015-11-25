@@ -1,11 +1,31 @@
-<div>
-
-  <div class="container">
-    <div class="center">Centered div with center aligned text.</div>
+<div class="col-md-3 col-md-offset-5">
+  <div class="page-header">
+    <h1>Chat.js</h1>
   </div>
 
-  <!-- <form>
-    <input id="email" type="text" placeholder="Email">
-    <input id="password" type="text" placeholder="Password">
-  </form> -->
+  <!-- SHOW ERROR/SUCCESS MESSAGES -->
+  <div id="messages" ng-model="message">{{message}}</div>
+
+  <form name="loginForm" ng-submit="submit(loginForm.$valid)" novalidate>
+    <div id="email-group" class="form-group" ng-class="{ 'has-error' : errorEmail }">
+      <label>Email Address</label>
+      <input type="text" name="email" class="form-control" placeholder="Email Address" ng-model="formData.email" required>
+      <p ng-show="loginForm.email.$invalid" class="help-block">Please enter a valid email</p>
+      <span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>
+    </div>
+
+    <div id="password-group" class="form-group" ng-class="{ 'has-error' : errorPassword }">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" placeholder="Password" ng-model="formData.password" required>
+      <p ng-show="loginForm.password.$invalid" class="help-block">Please enter your password</p>
+      <span class="help-block" ng-show="errorPassword">{{errorPassword}}</span>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block" ng-disabled="loginForm.$invalid">
+      Submit
+    </button>
+  </form>
+
 </div>
+
+

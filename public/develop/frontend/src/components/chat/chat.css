@@ -1,0 +1,10 @@
+.silver {
+  background-color: #E3E4EC;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}

@@ -18,6 +18,7 @@ function start(secureServer, config) {
 
     socket.on('otherevent', function (data) {
       console.log(data);
+      socket.emit('news', 'you published ' + data.my);
     });
 
     socket.on('disconnect', function(){

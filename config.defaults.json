@@ -6,8 +6,6 @@
     }
   },
   "restNamespace" : "/api/v1",
-  "webTokenSecret": "toBeReadFromEncryptedChefDataBag",
-  "tlsKey": "RSA-keys/server.key",
-  "tlsCert": "RSA-keys/server.crt",
-  "serverPort": "3000"
+  "serverPort": "3000",
+  "tokenExpiresInSecond": "86400"
 }

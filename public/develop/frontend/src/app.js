@@ -25,6 +25,24 @@
               controller: 'LoginCtrl'
             }
           }
+        })
+        .state('chat', {
+          url: '/chat',
+          views: {
+            'singleView': {
+              templateUrl: '/develop/frontend/src/components/chat/chat.html',
+              controller: 'ChatCtrl'
+            }
+          }
+        })
+        .state('room', {
+          url: '/room',
+          views: {
+            'singleView': {
+              templateUrl: '/develop/frontend/src/components/chat/room.html',
+              controller: 'RoomCtrl'
+            }
+          }
         });
 
         // use the HTML5 History API

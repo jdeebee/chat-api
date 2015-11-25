@@ -59,7 +59,7 @@
     }
 
     function login(user, callback) {
-      sendRequest('POST', 'https://localhost:3000/login', {
+      sendRequest('POST', 'https://localhost:3000/signin', {
         email: user.email,
         password: user.password
       }, function cb(res) {
