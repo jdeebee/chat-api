@@ -3,13 +3,13 @@
       <h1>Chat.js</h1>
     </div>
 
-    <form ng-submit="submit()">
+    <form name="startForm" ng-submit="submit()">
       <p>Who do you want to chat with?</p>
       <div id="email-group" class="form-group" ng-class="{ 'has-error' : errorEmail }">
         <input type="text" placeholder="Email Address" class="form-control"  ng-model="email" required/>
-        <span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>
+        <!--<span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>-->
       </div>
-      <button type="submit" class="btn btn-success btn-lg btn-block">Start</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" ng-disabled="startForm.$invalid">Start</button>
     </form>
 
   </div>

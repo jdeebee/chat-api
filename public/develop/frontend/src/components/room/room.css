@@ -1,0 +1,30 @@
+/*.frame {
+  display: inline-block;
+}*/
+
+.sent-msg {
+  display: block;
+  margin-top: 1em;
+  width: 300px;
+  /*float: right;*/
+  border-style: solid;
+  border-radius: 0.5em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-width: 0.1em;
+}
+
+.received-msg {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  width: 300px;
+  margin-top: 1em;
+  /*float: left;*/
+  border-style: solid;
+  border-radius: 0.5em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-width: 0.1em;
+  background-color: #ccf9e2;
+}

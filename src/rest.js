@@ -30,6 +30,7 @@ function configure(app, logger) {
   });
 
   app.post('/startchat', checkWebToken, function(req, res) {
+    console.log('Got a request to /startchat');
     if (!req.body.email)
       return res.status(400).send('Email address is missing');
 

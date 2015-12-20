@@ -1,3 +1,16 @@
 {
-  "esnext": true
+  "esnext"   : true,
+  "unused"   : true,
+  // environments:
+  "browser"  : true,
+  "node"     : true,
+  "devel"    : true,
+  "mocha"    : true,
+  "globals"  : {
+    "angular"         : false,
+    "assert"          : false,
+    "expect"          : false,
+    "io"              : false,
+    "module"          : false
+  }
 }

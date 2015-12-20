@@ -1,15 +1,15 @@
 angular.module('chatjs.controllers').controller('ChatCtrl',
-  ['$scope', '$http', '$log', '$state', 'loginService',
-  function($scope, $http, $log, $state, loginService) {
+  ['$scope', '$http', '$state',
+  function($scope, $http, $state) {
     'use strict';
 
     $scope.email = '';
+    $scope.errorEmail = false;
     $scope.submit = function() {
       var tokenObj = JSON.parse(localStorage.getItem('chatJsonWebToken'));
       console.log('tokenObj = ', tokenObj);
 
-
-      // check if token is not expired, otherwise re-login
+      // Todo: check if token is not expired, otherwise re-login
       $http({
         method  : 'POST',
         url     : '/startchat',
@@ -21,23 +21,8 @@ angular.module('chatjs.controllers').controller('ChatCtrl',
       })
       .success(function(response) {
         console.log(response);
-
-        if (response.success) {
-          console.log('Happy chatting!');
-          var client = io('https://localhost:3000/', {
-            'query': 'token=' + tokenObj.token
-          });
-
-          client.on('connect', function(socket) {
-            console.log('connected to server.');
-            client.emit('otherevent', { my: 'data' });
-            client.on('news', function (data) {
-              console.log(data);
-            });
-          });
-
-          // $state.go('room');
-        }
+        if (response.success)
+          $state.go('room');
       });
     };
 

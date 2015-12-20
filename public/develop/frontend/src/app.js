@@ -12,10 +12,6 @@
   ])
   .config(['$stateProvider', '$locationProvider',
     function($stateProvider, $locationProvider) {
-  // .config(['$stateProvider', '$urlRouterProvider',
-    // function($stateProvider, $urlRouterProvider) {
-      // $urlRouterProvider.otherwise('/');
-
       $stateProvider
         .state('login', {
           url: '/',
@@ -39,7 +35,7 @@
           url: '/room',
           views: {
             'singleView': {
-              templateUrl: '/develop/frontend/src/components/chat/room.html',
+              templateUrl: '/develop/frontend/src/components/room/room.html',
               controller: 'RoomCtrl'
             }
           }
