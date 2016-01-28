@@ -26,7 +26,6 @@ angular.module('chatjs.controllers').controller('ChatCtrl',
       });
     };
 
-
   }
 ]);
 

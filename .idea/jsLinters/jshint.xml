@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JSHintConfiguration" version="2.8.0" use-config-file="true" custom-config-file-path="$PROJECT_DIR$/config/jshint.conf">
+  <component name="JSHintConfiguration" version="2.9.1-rc2" use-config-file="true">
     <option asi="false" />
     <option bitwise="true" />
     <option boss="false" />
@@ -8,7 +8,7 @@
     <option browserify="false" />
     <option camelcase="false" />
     <option couch="false" />
-    <option curly="false" />
+    <option curly="true" />
     <option debug="false" />
     <option devel="false" />
     <option dojo="false" />
@@ -28,15 +28,17 @@
     <option gcl="false" />
     <option globalstrict="false" />
     <option immed="false" />
+    <option indent="2" />
     <option iterator="false" />
     <option jasmine="false" />
     <option jquery="false" />
     <option lastsemic="false" />
-    <option latedef="false" />
+    <option latedef="nofunc" />
     <option laxbreak="false" />
     <option laxcomma="false" />
     <option loopfunc="false" />
     <option maxerr="50" />
+    <option maxlen="80" />
     <option mocha="false" />
     <option mootools="false" />
     <option moz="false" />
@@ -69,10 +71,10 @@
     <option strict="true" />
     <option sub="false" />
     <option supernew="false" />
-    <option trailing="false" />
+    <option trailing="true" />
     <option typed="false" />
     <option undef="true" />
-    <option unused="false" />
+    <option unused="strict" />
     <option validthis="false" />
     <option white="false" />
     <option withstmt="false" />

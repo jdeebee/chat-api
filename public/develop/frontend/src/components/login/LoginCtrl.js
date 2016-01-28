@@ -7,7 +7,7 @@ angular.module('chatjs.controllers').controller('LoginCtrl',
       $scope.submit = function(isValid) {
         if (isValid) {
           loginService.login($scope.email, $scope.password)
-          .then(function(){
+          .then(function() {
             $state.go('chat');
           });
 
