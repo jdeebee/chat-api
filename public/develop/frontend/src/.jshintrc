@@ -1,0 +1,15 @@
+{
+  "esnext"   : false,
+  "unused"   : true,
+  // environments:
+  "browser"  : true,
+  "devel"    : true,
+  "mocha"    : true,
+  "globals"  : {
+    "angular"         : true,
+    "assert"          : false,
+    "expect"          : false,
+    "io"              : false,
+    "module"          : false
+  }
+}
